@@ -3,61 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Adventure - تعلم الإنجليزية بطريقة مسلية</title>
+    <title>بحث سريع - محرك البحث الذكي</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <!-- شاشة الدخول -->
-        <div class="screen" id="login-screen">
-            <div class="animated-background"></div>
-            <div class="logo">
-                <i class="fas fa-language"></i>
-                <h1>English Adventure</h1>
-            </div>
-            <div class="login-form">
-                <input type="text" id="username" placeholder="اسم المستخدم">
-                <button id="start-btn">ابدأ الرحلة!</button>
-            </div>
-        </div>
-
-        <!-- شاشة الدروس -->
-        <div class="screen hidden" id="lesson-screen">
-            <div class="header">
-                <div class="user-info">
-                    <span id="display-username">مستخدم</span>
-                    <div class="coins">🪙 <span id="coin-count">0</span></div>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">بحث<span>سريع</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="game-link">اللعبة</a></li>
+                    <li><a href="#">الصور</a></li>
+                    <li><a href="#">الفيديو</a></li>
+                    <li><a href="#">المزيد</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث عن أي شيء...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <button id="voice-btn"><i class="fas fa-microphone"></i></button>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="lesson-progress"></div>
+                <div class="search-buttons">
+                    <button>بحث سريع</button>
+                    <button>أنا محظوظ</button>
                 </div>
             </div>
-
-            <div class="lesson-container">
-                <div class="game-card" id="word-game">
-                    <h2>ما معنى هذه الكلمة؟</h2>
-                    <div class="word-display" id="current-word">Hello</div>
-                    <div class="options">
-                        <button class="option-btn">مرحبًا</button>
-                        <button class="option-btn">شكرًا</button>
-                        <button class="option-btn">تفاحة</button>
-                        <button class="option-btn">قطة</button>
+            
+            <div class="game-container hidden" id="game-section">
+                <h2>لعبة البحث السريع</h2>
+                <p>ابحث عن الكلمة المخفية في أسرع وقت!</p>
+                <div class="game-board">
+                    <div id="word-display"></div>
+                    <input type="text" id="game-input" placeholder="اكتب الكلمة هنا...">
+                    <button id="start-game">ابدأ اللعبة</button>
+                    <div id="game-stats">
+                        <span>الوقت: <span id="time">30</span> ثانية</span>
+                        <span>النقاط: <span id="score">0</span></span>
                     </div>
                 </div>
             </div>
-
-            <div class="character">
-                <img src="assets/images/dino.png" alt="Dino Character" id="dino-character">
-                <div class="speech-bubble hidden" id="feedback-bubble">أحسنت!</div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">حول</a>
+                <a href="#">إعلانات</a>
+                <a href="#">الأعمال</a>
+                <a href="#">كيف يعمل البحث</a>
+            </div>
+            <div class="footer-info">
+                <p>© 2023 بحث سريع. جميع الحقوق محفوظة.</p>
             </div>
         </div>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
-    <script src="firebase.js"></script>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
